@@ -50,7 +50,7 @@ snapifeye-widget {
 	vertical-align: middle;
 	font-family:Helvetica;
 }
-.sn-widget-gallery--info--other {
+.sn-widget-gallery--info--first {
 	position: absolute;
 	color: #FFFFFF;
 	width: 100%;
@@ -60,11 +60,27 @@ snapifeye-widget {
 	height: 120px;
 	margin-top: -60px;
 	font-size: 53px;
-	line-height: 53px;
+	line-height: 55px;
 	
 	vertical-align: middle;
 	font-family:Helvetica;
 	text-transform:uppercase;
+}
+
+.sn-widget-gallery--info--second {
+	position: absolute;
+	color: #FFFFFF;
+	width: 100%;
+	top: 50%;
+	left: 50px;
+
+	height: 120px;
+	margin-top: -60px;
+	font-size: 36px;
+	line-height: 43px;
+	
+	vertical-align: middle;
+	font-family:Helvetica;
 }
 
 .sn-widget-gallery--image-container {
@@ -89,10 +105,11 @@ snapifeye-widget {
 	<snapifeye-widget class="full-screen" params="eventId: 165, period: 7500"></snapifeye-widget>
 	<div class="sn-widget-gallery--info-container">
 		<div class="sn-widget-gallery--info">
-			<div class="sn-widget-gallery--info--other"><i>First Name<br>Last Name<br>
+			<div class="sn-widget-gallery--info--first"><i>First Name<br>Last Name<br>
 			</div>
-			
-			<p></p>Golf Course Name</p></div><p style="padding 0px  0px 0px 150px"><i>'#FacesOfASuper'</i></p></i></p>
+			<div class="sn-widget-gallery--info--second">
+			&nbsp;
+			<p>Golf Course Name</p></div>
 		
 	</div>
 	<div class="sn-widget-gallery--image-container">
