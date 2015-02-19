@@ -4,159 +4,120 @@
 
 		<style>
 			html, body { margin: 0px; padding: 0px; }
+
+			.sn-widget-gallery--info-container {
+				display: inline-block !important;
+				position: relative !important;
+				width: 50% !important;
+			}
+
+			.dummy {
+				margin-top: 100%;
+			}
+
+			.smarty {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+			}
+
+			.data-wrapper {
+				position: absolute;
+				width: 100%;
+				height: 200px;
+				top: 50%;
+				margin-top: -100px;
+			}
+			.data-wrapper div {
+				width: 100%;
+				padding: 0px 50px;
+			}
+			
+			.photo-meta-first-name,
+			.photo-meta-last-name {
+				font-style: italic;
+				font-family: arial;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+
+				color: #FFFFFF;
+				font-weight: 600;
+				font-size: 40px;
+				line-height: 40px;
+			}
+			.photo-meta-last-name {
+				margin-bottom: 25px;
+			}
+			.photo-question {
+				font-style: italic;
+				font-family: arial;
+
+				color: #FFFFFF;
+				font-weight: 100;
+				font-size: 24px;
+				line-height: 24px;
+			}
+
+			.event-hash-tag {
+				position: absolute;
+				bottom: 50px;
+				right: 50px;
+
+				color: #FFFFFF;
+				font-size: 40px;
+				line-height: 40px;
+				font-family: arial;
+			}
 		</style>
-		<style>
-snapifeye-widget {
-	display: block;
-	width: 100%;
-	height: 100%;
-	font-family:Helvetica;
-}
 
-.sn-widget-wrapper {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: 100%;
-	background-color: #000000;
-}
+		<script type="text/javascript">
+			function resolveFirstName(photo) {
+				var fullName = (photo.meta || {}).name;
+				if (fullName) {
+					fullName = fullName.split(" ")[0];
+				}
+				return fullName;
+			}
 
-.sn-widget-gallery--info-container {
-	position: absolute;
-	top: 0px;
-	bottom: 0px;
-	left: 50px;
-	right: 50%;
-}
+			function resolveLastName(photo) {
+				var fullName = (photo.meta || {}).name;
+				if (fullName) {
+					fullName = fullName.split(" ").pop();
+				}
+				return fullName;
+			}
 
-.sn-widget-gallery--info {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	font-family:Helvetica;
-}
+			function resolveQuestion1(data) {
+				return "Golden Ocala Golf and Equestrian Club";
+			}
 
-.sn-widget-gallery--info--event-name {
-	position: absolute;
-	color: #FFFFFF;
-	width: 100%;
-	top: 50%;
-
-	height: 120px;
-	margin-top: -60px;
-	font-size: 40px;
-	line-height: 40px;
-	
-	vertical-align: middle;
-	font-family:Helvetica;
-	text-transform:uppercase;
-}
-.sn-widget-gallery--info--first {
-	position: absolute;
-	color: #FFFFFF;
-	width: 100%;
-	top: 50%;
-	left: 50px;
-
-	height: 120px;
-	margin-top: -60px;
-	font-size: 53px;
-	line-height: 55px;
-	
-	vertical-align: middle;
-	font-family:Helvetica;
-	text-transform:uppercase;
-}
-
-.sn-widget-gallery--info--second {
-	position: absolute;
-	color: #FFFFFF;
-	width: 100%;
-	top: 50%;
-	left: 0px;
-
-	height: 120px;
-	margin-top: 30px;
-	font-size: 36px;
-	line-height: 43px;
-	
-	vertical-align: middle;
-	font-family:Helvetica;
-}
-.sn-widget-gallery--info--third {
-	position: absolute;
-	color: #FFFFFF;
-	width: 100%;
-	top: 50%;
-	left: 200px;
-
-	height: 120px;
-	margin-top: 150px;
-	font-size: 36px;
-	line-height: 43px;
-	
-	vertical-align: middle;
-	font-family:Helvetica;
-}
-
-.sn-widget-gallery--image-container {
-	position: absolute;
-	top: 13px;
-	bottom: 12px;
-	right: 12 px;
-	left: 60%;
-}
-
-.sn-widget-gallery--image {
-	position: relative;
-	max-width: 100%;
-	max-height: 100%;
-	margin: 0px auto;
-	overflow: hidden;
-	
-	top: 0px;
-	bottom: 0px;
-	right: 0px;
-	left: 0px;
-}
-</style>
+			function resolveQuestion2(data) {
+				return "Ocala, FL"
+			}
+		</script>
 
 	</head>
 	<body>
-	<snapifeye-widget class="full-screen" params="eventId: 165, period: 7500"></snapifeye-widget>
-	
-	<div class="data-wrapper">
-				<div class="photo-meta-name" data-bind="text: ($data.photo.meta || {}).name"></div>
-				<div class="photo-caption" data-bind="text: $data.photo.caption"></div>
-				<div class="event-name" data-bind="text: $data.event.name"></div>
-	<div class="sn-widget-gallery--info-container">
-		<div class="sn-widget-gallery--info">
-			<div class="sn-widget-gallery--info--event-name"><i>First Name<br>Last Name</i><br>
-			</div>
-			
-			<div class="sn-widget-gallery--info--second">Golf Course Name<br>
-			</div>
-			
-			<div class="sn-widget-gallery--info--third">#FacesOfASuper<br>
-			</div>
-	
-	</div></div>
-	
-	<div class="sn-widget-gallery--image-container">
-		<img class="sn-widget-gallery--image" data-bind="attr:{ src: $component.selected_image().url }" src="https://s3.amazonaws.com/picter-dev/combo_df2f6bf5b17d472a9fe7d1fc29f8b8af_some_name.jpeg">
-	</div>
-</div></snapifeye-widget>
- 
-	
- 
-</body></html>
 
+		<snapifeye-widget class="full-screen" params="eventId: 165, period: 7500, custom: true">
+			<!-- This content inside of there is optional. This will customize the left side text -->
+			<!-- Event object: $data.event -->
+			<!-- Photo object: $data.photo -->
+			<div class="dummy"></div>
+			<div class="smarty">
+				<div class="data-wrapper">
+					<div class="photo-meta-first-name" data-bind="text: resolveFirstName($data.photo)"></div>
+					<div class="photo-meta-last-name" data-bind="text: resolveLastName($data.photo)"></div>
+					
+					<div class="photo-question" data-bind="text: resolveQuestion1($data)"></div>
+					<div class="photo-question" data-bind="text: resolveQuestion2($data)"></div>
+				</div>
+			</div>
 
-
-</body>
-</div>
-</div>
-</div>
+			<div class="event-hash-tag">#FacesOfASuper</div>
+		</snapifeye-widget>
 
 	</body>
 </html>
