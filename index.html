@@ -50,6 +50,22 @@ snapifeye-widget {
 	vertical-align: middle;
 	font-family:Helvetica;
 }
+.sn-widget-gallery--info--other {
+	position: absolute;
+	color: #FFFFFF;
+	width: 100%;
+	top: 50%;
+	left: 50px;
+
+	height: 120px;
+	margin-top: -60px;
+	font-size: 53px;
+	line-height: 53px;
+	
+	vertical-align: middle;
+	font-family:Helvetica;
+	text-transform:uppercase;
+}
 
 .sn-widget-gallery--image-container {
 	position: absolute;
@@ -73,8 +89,11 @@ snapifeye-widget {
 	<snapifeye-widget class="full-screen" params="eventId: 165, period: 7500"></snapifeye-widget>
 	<div class="sn-widget-gallery--info-container">
 		<div class="sn-widget-gallery--info">
-			<div class="sn-widget-gallery--info--event-name" data-bind="text: $component.event().name"><i>First Name<br>Last Name</h1><br><p></p>Golf Course Name</p></div><p style="padding 0px  0px 0px 150px"><i>'#FacesOfASuper'</i></p></i></p>
-		</div>
+			<div class="sn-widget-gallery--info--other"><i>First Name<br>Last Name<br>
+			</div>
+			
+			<p></p>Golf Course Name</p></div><p style="padding 0px  0px 0px 150px"><i>'#FacesOfASuper'</i></p></i></p>
+		
 	</div>
 	<div class="sn-widget-gallery--image-container">
 		<img class="sn-widget-gallery--image" data-bind="attr:{ src: $component.selected_image().url }" src="https://s3.amazonaws.com/picter-dev/combo_76df25abddbd492b90f49b43e3f8664e_some_name.jpeg">
