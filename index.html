@@ -91,11 +91,27 @@
 			}
 
 			function resolveQuestion1(data) {
-				return "Golden Ocala Golf and Equestrian Club";
+				var questions = (data.event.offer_questions || []);
+				for (var i = 0; i < questions.length; i++) {
+					var question = questions[i];
+					if (question.indexOf("name of") > -1) {
+						return (data.photo.meta || {})[question]
+					}
+				}
+
+				return null;
 			}
 
 			function resolveQuestion2(data) {
-				return "Ocala, FL"
+				var questions = (data.event.offer_questions || []);
+				for (var i = 0; i < questions.length; i++) {
+					var question = questions[i];
+					if (question.indexOf("located") > -1) {
+						return (data.photo.meta || {})[question]
+					}
+				}
+
+				return null;
 			}
 		</script>
 
