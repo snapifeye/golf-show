@@ -3,34 +3,9 @@
 		<script type="text/javascript" src="http://events.snapifeye.com/snapifeye-widget/snapifeye-widget-all.min.js"></script>
 
 		<style>
-		.data-wrapper {
-				position: absolute;
-				width: 100%;
-				height: 200px;
-				top: 50%;
-				margin-top: -100px;
-			}
-			.data-wrapper div {
-				width: 100%;
-				text-align: center;
-
-				color: #FFFFFF;
-				font-size: 36px;
-				line-height: 36px;
-			}
-			
-			.photo-meta-name {
-				margin-bottom: 25px;
-			}
-			.photo-caption {
-				font-size: 20px !important;
-				line-height: 20px !important;
-			}
-			.event-name {
-				margin-top: 5px;
-			}
-		
-		
+			html, body { margin: 0px; padding: 0px; }
+		</style>
+		<style>
 snapifeye-widget {
 	display: block;
 	width: 100%;
@@ -148,14 +123,12 @@ snapifeye-widget {
 
 	</head>
 	<body>
-	<snapifeye-widget class="full-screen" params="eventId: 165, period: 7500, custom: true">
+	<snapifeye-widget class="full-screen" params="eventId: 165, period: 7500"></snapifeye-widget>
 	
 	<div class="data-wrapper">
 				<div class="photo-meta-name" data-bind="text: ($data.photo.meta || {}).name"></div>
 				<div class="photo-caption" data-bind="text: $data.photo.caption"></div>
 				<div class="event-name" data-bind="text: $data.event.name"></div>
-	
-	
 	<div class="sn-widget-gallery--info-container">
 		<div class="sn-widget-gallery--info">
 			<div class="sn-widget-gallery--info--event-name"><i>First Name<br>Last Name</i><br>
@@ -181,6 +154,7 @@ snapifeye-widget {
 
 
 </body>
+</div class="col-md-7">
 </div>
 </div>
 </div>
