@@ -74,15 +74,20 @@
 		</style>
 
 		<script type="text/javascript">
-			<script type="text/javascript">
 			function resolveFirstName(photo) {
 				var fullName = (photo.meta || {}).name;
 				if (fullName) {
-					fullName = fullName;
+					fullName = fullName.split(" ")[0];
 				}
 				return fullName;
 			}
 
+			function resolveLastName(photo) {
+				var fullName = (photo.meta || {}).name;
+				if (fullName) {
+					fullName = fullName.split(" ").pop();
+				}
+				return fullName;
 			}
 
 			function resolveQuestion1(data) {
